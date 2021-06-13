@@ -11,5 +11,7 @@ namespace QuickBuy.Dominio.Entidades
         public int ProductId { get; set; }
 
         public int Quantidade { get; set; }
+
+
     }
 }
