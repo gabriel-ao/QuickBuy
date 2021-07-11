@@ -13,7 +13,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Nome))
+                AdicionarCritica("Nome não foi informado");
+
+            if (string.IsNullOrEmpty(Descricao))
+                AdicionarCritica("Descricao não foi informado");
         }
     }
 }

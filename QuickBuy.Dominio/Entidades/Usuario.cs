@@ -14,13 +14,19 @@ namespace QuickBuy.Dominio.Entidades
 
 
         /// <summary>
-        ///  um usuarrrio pode ter nenhum ou muitos pedidos
+        ///  um usuario pode ter nenhum ou muitos pedidos
         /// </summary>
         public ICollection<Pedido> Pedidos { get; set; }
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Email))
+                AdicionarCritica("Email não foi informado");
+
+            if (string.IsNullOrEmpty(Senha))
+                AdicionarCritica("Semmja não foi informada");
+
+
         }
     }
 }
